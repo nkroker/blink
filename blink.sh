@@ -4,6 +4,14 @@ PROJECT_NAME=$1
 
 CURRENT_DIRECTORY=$(pwd)
 
+if [[ $* == *--help* ]]; then
+  echo "Hi there,"
+  echo "Blink is a simple script for creating Machine Learning project scaffold in a blink of an eye"
+  echo "Usage: blink.sh <project name>"
+  echo "Project Name: Any name you like"
+  exit
+fi
+
 if [[ -z "${PROJECT_NAME}" ]]; then
   echo "Please provide project name"
   exit
@@ -22,7 +30,7 @@ cd "${CURRENT_DIRECTORY}/${PROJECT_NAME}"
 git init
 echo git init
 
-touch "__init__".py
+touch "__init__.py"
 echo 'creating __init__.py'
 
 mkdir 'assets'
