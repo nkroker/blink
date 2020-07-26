@@ -12,6 +12,8 @@ if [[ $* == *--help* ]]; then
   exit
 fi
 
+sudo apt-get install tree
+
 if [[ -z "${PROJECT_NAME}" ]]; then
   echo "Please provide project name"
   exit
